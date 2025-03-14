@@ -174,7 +174,7 @@ If you'd like to contribute to this project, you can:
 
 ## **Contact**
 - Email: salah.biruty200891@gmail.com
-- GitHub: [Your GitHub Profile](https://github.com/lSEMBA)
+- GitHub: [My GitHub Profile](https://github.com/lSEMBA)
 
 ---
 
