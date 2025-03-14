@@ -93,6 +93,7 @@ Web-Technology-Project/
 ├── static/               # CSS, JS
 ├── templates/            # HTML files
 ├── db.sqlite3            # SQLite database
+├── manage.py             # Django management script
 └── README.md             # This file
 ```
 
