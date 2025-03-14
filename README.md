@@ -60,8 +60,8 @@ pip install -r requirements.txt
 
 ### **Step 1: Clone the Repository**
 ```bash
-git clone https://github.com/yourusername/Web-Technology-Project.git
-cd Web-Technology-Project
+git clone https://github.com/lSEMBA/Web-Technology.git
+cd Web-Technology
 ```
 
 ### **Step 2: Set Up Virtual Environment**
