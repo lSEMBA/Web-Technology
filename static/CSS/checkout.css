@@ -1,0 +1,130 @@
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --header-bg-color: #ffffff;
+    --header-text-color: #333;
+    --card-bg-color: #ffffff;
+    --card-shadow-color: rgba(0, 0, 0, 0.1);
+    --input-bg-color: #f9f9f9;
+    --input-border-color: #ccc;
+    --button-bg-color: #007bff;
+    --button-hover-bg-color: #0056b3;
+    --footer-bg-color: #333;
+    --footer-text-color: #fff;
+    --secondary-text-color: #555;
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --header-bg-color: #1f1f1f;
+    --header-text-color: #e0e0e0;
+    --card-bg-color: #1f1f1f;
+    --card-shadow-color: rgba(0, 0, 0, 0.5);
+    --input-bg-color: #2c2c2c;
+    --input-border-color: #555;
+    --button-bg-color: #90caf9;
+    --button-hover-bg-color: #64b5f6;
+    --footer-bg-color: #1f1f1f;
+    --footer-text-color: #e0e0e0;
+    --secondary-text-color: #bdbdbd;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+    padding: 20px 0;
+    box-shadow: 0 4px 8px var(--card-shadow-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h2 {
+    text-align: center;
+    color: var(--button-bg-color);
+    margin: 40px 0 20px;
+    font-size: 32px;
+}
+
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+    background: var(--card-bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px var(--card-shadow-color);
+}
+
+.payment-form label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.payment-form select,
+.payment-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+}
+
+.payment-form button {
+    background-color: var(--button-bg-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.payment-form button:hover {
+    background-color: var(--button-hover-bg-color);
+}
+
+.payment-description {
+    font-size: 14px;
+    color: var(--secondary-text-color);
+    padding: 10px;
+    background: var(--input-bg-color);
+    border-radius: 5px;
+}
+
+#payment-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+footer {
+    background: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+}

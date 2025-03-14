@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    background-color: #121212;
+    color: #FFFFFF;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.project {
+    width: 80%;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+    .project:first-child {
+        box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.5);
+    }
+
+        .project:first-child:hover {
+            border: 2px solid rgba(255,255,255,.2);
+            box-shadow: 0 0 10px #ff5454;
+            overflow: hidden;
+            animation: animate 7s linear infinite;
+            animation: motion-color 7s linear infinite alternate;
+        }
+
+@keyframes motion-color {
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.project:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}

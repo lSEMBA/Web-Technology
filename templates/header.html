@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/favicon.ico" sizes="16x16 32x32 192x192 512x512"
+        type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ MEDIA_URL }}images/ico/apple-touch-icon.png">
+
+    <script src="{% static 'JS/ajax.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static 'CSS/brand.css' %}">
+
+
+    <title>ElectroMart</title>
+    <link rel="stylesheet" href="{% static 'CSS/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/All.css' %}">
+    <script src="https://kit.fontawesome.com/947ffa6964.js" crossorigin="anonymous"></script>
+</head>
+<div id="loading-spinner">
+    <div class="spinner"></div>
+</div>
+<header>
+    <input type="checkbox" id="search-icon-checkbox" style="display:none;">
+    <label for="search-icon-checkbox">
+        <i class="fa-solid fa-magnifying-glass"
+           style="font-size: 25px; margin-right: 5px; color: #ffffff; margin-left: 10px !important; position: absolute; top: 15px; left: 10px;"
+           id="search-icon"></i>
+    </label>
+    <div id="search-boxx">
+        <input type="text" placeholder="Search..." id="search-input">
+        <label for="search-icon-checkbox" id="close-icon">
+            <i class="fa-solid fa-xmark" style="font-size: 25px;"></i>
+        </label>
+    </div>
+    <h1>
+        <a href="{% url 'index' %}">
+            <img src="{{ MEDIA_URL }}images/logo.png" alt="Small Image" width="100" height="50"
+                 style="margin-bottom: -15px" class="image-icon" />
+        </a>
+
+    </h1>
+
+
+
+    <div class="search-box">
+        <div class="search-container">
+            <div id="product-item">
+                <a id="product-link">All</a>
+                <ul class="dropdown">
+                    <li class="radio-input">
+                        <label class="label">
+                            <input type="radio" id="value-1" checked="" name="value-radio" value="value-1"
+                                   onclick="selectCategory(this)" />
+                            <span class="text">All</span>
+                        </label>
+                        <label class="label">
+                            <input type="radio" id="value-2" name="value-radio" value="value-2"
+                                   onclick="selectCategory(this)" />
+                            <span class="text">Mobile</span>
+                        </label>
+                        <label class="label">
+                            <input type="radio" id="value-3" name="value-radio" value="value-3"
+                                   onclick="selectCategory(this)" />
+                            <span class="text">Laptop</span>
+                        </label>
+                        <label class="label">
+                            <input type="radio" id="value-4" name="value-radio" value="value-4"
+                                   onclick="selectCategory(this)" />
+                            <span class="text">Computers</span>
+                        </label>
+                        <label class="label">
+                            <input type="radio" id="value-5" name="value-radio" value="value-5"
+                                   onclick="selectCategory(this)" />
+                            <span class="text">Audio</span>
+                        </label>
+                        <label class="label">
+                            <input type="radio" id="value-6" name="value-radio" value="value-6"
+                                   onclick="selectCategory(this)" />
+                            <span class="text">Smartwatch</span>
+                        </label>
+                        <label class="label">
+                            <input type="radio" id="value-7" name="value-radio" value="value-7"
+                                   onclick="selectCategory(this)" />
+                            <span class="text">Home Appliance</span>
+                        </label>
+                        <label class="label">
+                            <input type="radio" id="value-8" name="value-radio" value="value-8"
+                                   onclick="selectCategory(this)" />
+                            <span class="text">PlayStation</span>
+                        </label>
+                        <label class="label">
+                            <input type="radio" id="value-9" name="value-radio" value="value-9"
+                                   onclick="selectCategory(this)" />
+                            <span class="text">Computer Accessories</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <input list="pro" name="pro" id="input-box" class="search-box" placeholder="Search..." autocomplete="off" />
+            <button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <div class="result-box"></div>
+        </div>
+    </div>
+
+    <ul class="links_h">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+    </ul>
+    <label class="switch">
+        <input type="checkbox" id="theme-toggle" class="input__check">
+        <span class="slider"></span>
+    </label>
+
+    <nav>
+        <ul>
+            <li>
+                {% if user.is_authenticated %}
+                <!-- Profile dropdown -->
+                <div class="profile-dropdown">
+                    <a href="#" id="profile-icon">
+                        {% if profile.avatar %}
+                        <img src="{{ profile.avatar.url }}" alt="Profile Picture"
+                             style="width: 30px; height: 30px; margin-top: 6px; border-radius: 50%; object-fit: cover; margin-right: 4px;"
+                             class="avatars">
+                        {% else %}
+                        <img src="/media/avatars/default.png" alt="Default Profile Picture"
+                             style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
+                        {% endif %}
+                    </a>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <a href="{% url 'user_profile' %}">Profile Page</a>
+                        <form method="POST" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <button type="submit" class="sign-out-btn">Sign Out</button>
+                        </form>
+                    </div>
+                </div>
+
+                {% else %}
+                <!-- Login link -->
+                <a href="{% url 'LogIn-SignUp' %}">
+                    <i class="fa-solid fa-user" style="font-size: 25px; margin-right: 5px; margin-top: 5px;"></i>
+                </a>
+                {% endif %}
+
+            </li>
+            <li>
+                {% if profile.avatar %}
+
+                <a href="{% url 'cart' %}">
+                    <img src="{{ MEDIA_URL }}images/android-chrome-512x512.png" alt="Small Image" width="28" height="28"
+                         style="margin-bottom: -18px; margin-right: 10px;" class="image-cart" />
+                </a>
+                {% else %}
+                <a href="{% url 'cart' %}">
+                    <img src="{{ MEDIA_URL }}images/android-chrome-512x512.png" alt="Small Image" width="28" height="28"
+                         style="margin-bottom: -15px; margin-right: 10px;" class="image-cart" />
+                </a>
+                {% endif %}
+
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <input type="checkbox" id="checkbox">
+    <label for="checkbox" class="toggle">
+        <span class="bar bar--top"></span>
+        <span class="bar bar--middle"></span>
+        <span class="bar bar--bottom"></span>
+    </label>
+
+    <div class="dropdown_menu">
+        <ul class="links">
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'cart' %}">Cart</a></li>
+            <li><a href="{% url 'LogIn-SignUp' %}">LogIn</a></li>
+            <li><a href="#" id="theme-toggle-link">Dark Theme</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+
+        </ul>
+
+    </div>
+
+    <script>
+        const loadingSpinner = document.getElementById('loading-spinner');
+        const content = document.getElementById('content');
+
+        setTimeout(function () {
+            loadingSpinner.style.display = 'none';
+        }, 400);
+    </script>
+
+
+</header>

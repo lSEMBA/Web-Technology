@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/favicon-32x32.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="{{ MEDIA_URL }}images/ico/apple-touch-icon.png">
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/android-chrome-192x192.png" sizes="192x192" type="png">
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/android-chrome-512x512.png" sizes="512x512" type="png">
+
+    <script src="{% static 'JS/ajax.js' %}"></script>
+
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="{% static 'CSS/All.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/cart.css' %}">
+    <script src="https://kit.fontawesome.com/947ffa6964.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <div class="cart-container">
+        <div id="cart-items"></div>
+        <div id="total-price">
+
+        </div>
+        <form method="post" action="{% url 'checkout' %}">
+            {% csrf_token %}
+            <input type="hidden" name="cart" id="cart-input">
+            <button type="submit" href="{% url 'checkout' %}" id="checkout-button" style=" border-radius: 5px; margin-top: 20px; ">Proceed to Checkout</button>
+        </form>
+    </div>
+    
+
+
+    <footer>
+        <p>&copy; 2024 ElectroMart. All rights reserved.</p>
+        <select id="currency-select">
+            <option value="USD">دولار امريكي</option>
+            <option value="EGP">جنيه مصري</option>
+            <option value="SAR">ريال سعودي</option>
+            <option value="SYP">ليرة سورية</option>
+            <option value="YER">ريال يمني</option>
+            <option value="SDG">جنيه سوداني</option>
+            <option value="KWD">دينار كويتي</option>
+
+        </select>
+        <ul>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </footer>
+    <script src="{% static 'JS/scripts.js' %}"></script>
+    <script src="{% static 'JS/product.js' %}"></script>
+    <script src="{% static 'JS/cart.js' %}"></script>
+    <script src="{% static 'JS/searchproducts.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</body>
+</html>

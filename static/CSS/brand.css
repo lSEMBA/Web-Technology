@@ -1,0 +1,155 @@
+.brand-filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: var(--product-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+.brand-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-right: 20px;
+}
+
+.brand-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.brand-list li {
+    font-size: 16px;
+}
+
+.brand-list a {
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 25px;
+    border: 2px solid;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    /*color: #645f5f; */
+    text-transform: capitalize;
+}
+
+.brand-list a:hover {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+
+.apple {
+    color: #A2AAAD;
+    border-color: #A2AAAD;
+}
+
+.samsung {
+    color: #1428A0;
+    border-color: #1428A0;
+}
+
+.Sony {
+    color: #003087;
+    border-color: #003087;
+}
+
+.hp {
+    color: #0096D6;
+    border-color: #0096D6;
+}
+
+.huawei {
+    color: #F00C0C;
+    border-color: #F00C0C;
+}
+
+.midea {
+    color: #32C9B9;
+    border-color: #32C9B9;
+}
+
+.panasonic {
+    color: #006F9B;
+    border-color: #006F9B;
+}
+
+.lg {
+    color: #E60012;
+    border-color: #E60012;
+}
+
+.intel {
+    color: #0071C5;
+    border-color: #0071C5;
+}
+
+.xiaomi {
+    color: #FF6900;
+    border-color: #FF6900;
+}
+
+.dell {
+    color: #0076A3;
+    border-color: #0076A3;
+}
+
+.brand-dropdown-container {
+    flex-grow: 1;
+    max-width: 250px;
+}
+
+.brand-dropdown {
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: 1px solid #789796;
+    color: #333;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.brand-dropdown:hover {
+    border-color: #007bff;
+    background-color: #f0f8ff;
+}
+
+.brand-dropdown:focus {
+    outline: none;
+    border-color: #0056b3;
+}
+
+.brand-list a.active {
+    background-color: #0056b3;
+    color: white;
+    border-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .brand-filter {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .brand-links {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .brand-dropdown-container {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

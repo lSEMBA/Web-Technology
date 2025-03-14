@@ -1,0 +1,44 @@
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>
+                <a href="{% url 'index' %}">
+                    <img src="{{ MEDIA_URL }}images/logo.png" alt="ElectroMart Logo" class="logo">
+                </a>
+            </h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'cart' %}">Cart</a></li>
+                    <li><a href="{% url 'user_profile' %}">Profile</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Track Your Order</h2>
+            <form class="check-order-form">
+                <label for="order-id">Enter Your Order ID:</label>
+                <input type="text" id="order-id" name="order-id" placeholder="e.g., 12345" required>
+                <button type="button" onclick="checkOrder()">Check Order</button>
+            </form>
+
+            <div class="order-details" id="order-details">
+                <h3>Order Details</h3>
+                <p><strong>Order ID:</strong> <span id="details-id"></span></p>
+                <p><strong>Product:</strong> <span id="details-product"></span></p>
+                <p><strong>Quantity:</strong> <span id="details-quantity"></span></p>
+                <p><strong>Total Price:</strong> <span id="details-price"></span></p>
+                <p><strong>Date:</strong> <span id="details-date"></span></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ElectroMart. Your satisfaction is our priority!</p>
+    </footer>

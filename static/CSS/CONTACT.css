@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../../media/images/lLLl.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 5;
+}
+
+h1 {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    margin-left: 106px;
+}
+
+.links_h {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+    .links_h li {
+        margin-left: 20px;
+    }
+
+        .links_h li a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 25px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+            .links_h li a:hover {
+                color: #007BFF;
+            }
+
+            .links_h li a:focus {
+                outline: none;
+                color: #007BFF;
+            }
+.image-icon:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.image-icon {
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,.2);
+    box-shadow: 0 0 50px #0ef;
+    border-radius: 20px;
+    padding: 50px 30px;
+    overflow: hidden;
+    animation: animate 7s linear infinite;
+    animation: motion-blur 7s linear infinite alternate;
+}
+
+@keyframes motion-blur {
+
+    0% {
+        backdrop-filter: blur(20px);
+    }
+    99.99% {
+        backdrop-filter: blur(20px);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: 1s ease-in-out;
+}
+
+.wrapper.active .form-wrapper.sign-in {
+    transform: translateY(-450px)
+}
+
+.wrapper .form-wrapper.sign-up {
+    position: absolute;
+    top: 490px;
+    left: 0;
+}
+
+.wrapper.active .form-wrapper.sign-up {
+    transform: translateY(-490px)
+}
+
+h2{
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+.input-group {
+    position: relative;
+    margin: 30px 0;
+    border-bottom: 2px solid #fff;
+
+}
+
+
+    .input-group label {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        font-size: 16px;
+        color: #fff;
+        pointer-events: none;
+        transition: .5s;
+    }
+
+    .input-group input {
+        width: 320px;
+        height: 40px;
+        font-size: 16px;
+        color: #fff;
+        padding: 0 5px;
+        background: transparent;
+        border: none;
+        outline: none;
+    }
+
+        .input-group input:focus ~ label, .input-group input:valid ~ label {
+            top : -5px;
+        }
+
+.remember-text {
+    position: relative;
+    top: -4px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+
+    color: #fff;
+    font-size: 16px;
+    accent-color: #0ef;
+}
+
+
+
+button {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background: #0ef;
+    box-shadow: 0 0 10px #0ef;
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    margin-top: 15px; 
+}
+
+.signUp-link {
+    font-size: 14px;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.signUp-link p{
+    color: #fff
+
+}
+
+.signUp-link p a {
+    color: #0ef;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+    .signUp-link p a:hover {
+        text-decoration: underline;
+    }
+
+
+.check {
+    cursor: pointer;
+    position: relative;
+    margin: auto;
+    width: 18px;
+    height: 18px;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate3d(0, 0, 0);
+}
+
+    .check:before {
+        content: "";
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: rgba(34,50,84,0.03);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    .check svg {
+        position: relative;
+        z-index: 1;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke: #c8ccd4;
+        stroke-width: 1.5px;
+        transform: translate3d(0, 0, 0);
+        transition: all 0.2s ease;
+    }
+
+        .check svg path {
+            stroke-dasharray: 60;
+            stroke-dashoffset: 0;
+        }
+
+        .check svg polyline {
+            stroke-dasharray: 22;
+            stroke-dashoffset: 66;
+        }
+
+    .check:hover:before {
+        opacity: 1;
+    }
+
+    .check:hover svg {
+        stroke: #4285f4;
+    }
+
+#cbx-signIn:checked + label.check svg {
+    stroke: #4285f4;
+}
+
+    #cbx-signIn:checked + label.check svg path {
+        stroke-dashoffset: 60;
+        transition: all 0.3s linear;
+    }
+
+    #cbx-signIn:checked + label.check svg polyline {
+        stroke-dashoffset: 42;
+        transition: all 0.2s linear;
+        transition-delay: 0.15s;
+    }
+
+#cbx-signUp:checked + .check svg {
+    stroke: #4285f4;
+}
+
+    #cbx-signUp:checked + .check svg path {
+        stroke-dashoffset: 60;
+        transition: all 0.3s linear;
+    }
+
+    #cbx-signUp:checked + .check svg polyline {
+        stroke-dashoffset: 42;
+        transition: all 0.2s linear;
+        transition-delay: 0.15s;
+    }
+
+.custom-textarea {
+    height: 80px;
+    width: 335px;
+    resize: none;
+    padding: 5px;
+}

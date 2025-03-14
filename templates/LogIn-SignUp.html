@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/LogIn-SignUp.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/notification.css' %}">
+    <script src="{% static 'JS/LogIn-SignUp.js' %}" defer></script>
+    <title>Login & Registration | ElectroMart</title>
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="{% url 'index' %}">
+                <img src="{{ MEDIA_URL }}images/logo.png" alt="Website Logo" width="100" height="50" style="margin-bottom: -15px;" class="image-icon">
+            </a>
+        </h1>
+        <nav>
+            <ul class="links_h">
+                <li><a href="{% url 'index' %}">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <!-- Login Form -->
+        <div class="form-wrapper sign-in">
+            <form id="login-form" method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <h2>Login</h2>
+                <div class="input-group">
+                    <input type="text" id="login-username" name="username" required>
+                    <label for="login-username">Username</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="login-password" name="password" required>
+                    <label for="login-password">Password</label>
+                </div>
+                <div class="remember">
+                    <input type="checkbox" id="remember-me" name="remember_me">
+                    <label for="remember-me" class="white-text">Remember me</label>
+                </div>
+                <button type="submit" id="login-button">Login</button>
+                <p class="white-text">
+                    Don't have an account?
+                    <a href="#" class="signUpBtn-link">Sign Up</a>
+                </p>
+            </form>
+        </div>
+
+
+        <!-- Sign-Up Form -->
+        <div class="form-wrapper sign-up">
+            <form id="signup-form" method="post" action="{% url 'signup' %}">
+                {% csrf_token %}
+                <h2>Sign Up</h2>
+                <div class="input-group">
+                    <input type="text" id="signup-username" name="username" required>
+                    <label for="signup-username">Username</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="signup-email" name="email" required>
+                    <label for="signup-email">Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="signup-password" name="password" required>
+                    <label for="signup-password">Password</label>
+                </div>
+                <button type="submit">Sign Up</button>
+                <p class="white-text">
+                    Already have an account?
+                    <a href="#" class="signInBtn-link">Sign In</a>
+                </p>
+            </form>
+        </div>
+
+    </div>
+    {% if messages %}
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            {% for message in messages %}
+                showNotification("{{ message }}", "{{ message.tags }}" === "success");
+            {% endfor %}
+        });
+    </script>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,246 @@
+/* Product container styling */
+.product-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    max-height: 900px;
+    background-color: var(--product-bg-color);
+    box-shadow: 0 2px 5px var(--product-shadow-color);
+}
+
+[data-theme="dark"] .product-container {
+    background-color: rgba(50, 50, 50, 52);
+    /* خلفية داكنة شفافة لتخفيف الدمج */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.product-image img {
+    width: 600px;
+    height: 600px;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    border-radius: 5px;
+    mix-blend-mode: multiply;
+    aspect-ratio: auto; /* إزالة القيود غير الضرورية */
+}
+
+.product-image img {
+    mix-blend-mode: multiply;
+    /* تأثير الدمج */
+    opacity: 1;
+    /* تقليل الشفافية لتخفيف تأثير الدمج */
+}
+
+/* تخصيص إعدادات الثيم الداكن */
+[data-theme="dark"] .product-image img {
+    mix-blend-mode: normal;
+    /* إزالة تأثير الدمج عند تطبيق الثيم الداكن */
+    opacity: 100;
+    /* زيادة الشفافية في الثيم الداكن لتخفيف التأثير */
+}
+
+
+.product-info {
+    margin-left: 20px;
+}
+
+    .product-info h1 {
+        margin: 0;
+        font-size: 24px;
+    }
+
+    .product-info .price {
+        color: #b12704;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .product-info ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+        .product-info ul li {
+            background: #eaeaea;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+
+
+/* ضبط حجم النص لتنسيق الثيم الداكن */
+[data-theme="dark"] .product-info ul li {
+    background: var(--result-bg-color);
+}
+
+.add-to-cart,
+.back-to-products {
+    padding: 10px 15px;
+    margin-top: 15px;
+    margin-bottom: -5px;
+    color: #fff;
+    font-size: 15px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 150px; /* نفس العرض لكلا الزرين */
+    text-align: center; /* لضمان تمركز النصوص */
+    display: inline-block; /* لجعل العرض موحدًا دائمًا */
+    box-sizing: border-box; /* لضمان أن العرض يشمل البادينج */
+}
+
+
+
+    .add-to-cart:hover,
+    .back-to-products:hover {
+        background-color: #218838;
+    }
+
+
+
+.review-section {
+    margin-top: 20px;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+    .review-section h3 {
+        font-size: 20px;
+        color: var(--text-color);
+    }
+
+.rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.rating-label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+
+
+#comment-box {
+    width: 100%;
+    height: 80px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: var(--search-bg-color);
+    color: var(--text-color);
+}
+
+.submit-review {
+    padding: 8px 16px;
+    margin-top: 10px;
+    background-color: var(--button-bg-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#reviews-list {
+    margin-top: 20px;
+}
+
+.review {
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.review-rating {
+    color: #ffc107;
+    font-size: 18px;
+}
+
+.review-text {
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.average-rating {
+    font-size: 18px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.star2 {
+    position: relative;
+    font-size: 20px;
+    line-height: 1;
+    display: inline-block;
+    color: var(--text-color); /* لون النجمة غير المضيئة */
+}
+
+    .star2::before {
+        content: '★'; /* النجمة المضيئة */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: var(--star-fill-percentage, 0%);
+        overflow: hidden;
+        color: gold; /* لون النجمة المضيئة */
+    }
+
+    .star2::after {
+        content: '★'; /* النجمة غير المضيئة */
+        color: var(--text-color); /* لون النجمة غير المضيئة */
+    }
+
+.radio {
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+    flex-direction: row-reverse; /* النجوم تبدأ من اليمين إلى اليسار */
+    margin-top: -5px
+}
+
+    .radio > input {
+        position: absolute;
+        appearance: none; /* إخفاء أزرار الراديو */
+    }
+
+    .radio > label {
+        cursor: pointer;
+        font-size: 30px;
+        position: relative;
+        display: inline-block;
+        transition: transform 0.3s ease;
+        color: #666;
+    }
+
+        .radio > label:hover {
+            color: #ff9e0b; /* تلوين النجوم عند التمرير */
+            transform: scale(1.2);
+        }
+
+            .radio > label:hover,
+            .radio > label:hover ~ label {
+                color: #ff9e0b; /* تلوين النجوم عند التمرير */
+            }
+
+    .radio > input:checked ~ label {
+        color: #ff9e0b; /* تغيير لون النجوم السابقة */
+    }
+
+
+
+
+
+model-viewer {
+    width: 600px;
+    height: 600px;
+}

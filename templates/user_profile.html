@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    
+    <script src="{% static 'JS/ajax.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static 'CSS/user_profile.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/All.css' %}">
+    <script src="https://kit.fontawesome.com/947ffa6964.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    {% include 'header.html' %}
+    <div class="container">
+        <div class="profile-header">
+            <div class="avatar-container">
+                <img src="{{ profile.avatar.url|default:'/media/avatars/default.png' }}" alt="User Avatar"
+                    class="avatar">
+            </div>
+            <h1 class="username">{{ user.username }}</h1>
+            <p class="email">{{ user.email }}</p>
+        </div>
+
+        <section class="profile-content">
+            <div class="profile-card">
+                <h2 class="section-title">Your Details</h2>
+                {% if profile %}
+                <ul class="profile-info-list">
+                    <li><strong>Bio:</strong> {{ profile.bio }}</li>
+                    <li><strong>Phone:</strong> {{ profile.phone }}</li>
+                    <li><strong>Address:</strong> {{ profile.address }}</li>
+                </ul>
+                {% else %}
+                <p>No profile data available.</p>
+                {% endif %}
+            </div>
+            
+            <div class="edit-profile-form">
+                <h2 class="section-title">Edit Profile</h2>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn">Save Changes</button>
+                </form>
+            </div>
+
+            <div class="history-button">
+                <a href="{% url 'order_history' %}" class="btn btn-secondary">
+                    View History
+                </a>
+            </div>
+        </section>
+
+        <div class="logout-button">
+            <form method="POST" action="{% url 'logout' %}" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">
+                    Sign Out
+                </button>
+            </form>
+        </div>
+        
+    </div>
+    <script src="{% static 'JS/scripts.js' %}"></script>
+</body>
+
+</html>

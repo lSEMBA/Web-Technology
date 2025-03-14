@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/favicon-32x32.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="{{ MEDIA_URL }}images/ico/apple-touch-icon.png">
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/android-chrome-192x192.png" sizes="192x192" type="png">
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/android-chrome-512x512.png" sizes="512x512" type="png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7x5cx5u9g/jF41BM8zjX1Brqr/qhFYNd8ly" crossorigin="anonymous"></script>
+    <script src="{% static 'JS/ajax.js' %}"></script>
+
+    <title>Product Details</title>
+
+    <link rel="stylesheet" href="{% static 'CSS/product.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/All.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/notification.css' %}">
+    <script src="https://kit.fontawesome.com/947ffa6964.js" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+
+</head>
+{% include 'header.html' %}
+
+<body>
+    <div id="product-details"></div>
+    <div class="review-section">
+        <h3>Product Reviews</h3>
+        <div class="average-rating">
+            Average Rating: <span id="average-rating">0</span>
+            <div id="average-stars" class="stars-display"></div>
+        </div>
+        <div class="rating">
+            <span class="rating-label">Rate this product:</span>
+            <div class="radio">
+                <input id="rating-5" type="radio" name="rating" value="5" />
+                <label for="rating-5" title="5 stars" class="star">&#9733;</label>
+
+                <input id="rating-4" type="radio" name="rating" value="4" />
+                <label for="rating-4" title="4 stars" class="star">&#9733;</label>
+
+                <input id="rating-3" type="radio" name="rating" value="3" />
+                <label for="rating-3" title="3 stars" class="star">&#9733;</label>
+
+                <input id="rating-2" type="radio" name="rating" value="2" />
+                <label for="rating-2" title="2 stars" class="star">&#9733;</label>
+
+                <input id="rating-1" type="radio" name="rating" value="1" />
+                <label for="rating-1" title="1 stars" class="star">&#9733;</label>
+            </div>
+        </div>
+        <textarea id="comment-box" placeholder="Write your comment here..."></textarea>
+        <button class="submit-review">Submit Review</button>
+
+        <div id="reviews-list">
+            <h4>Recent Reviews:</h4>
+            <div class="review">
+                <p class="review-rating">★★★★☆</p>
+                <p class="review-text">Amazing product with great quality!</p>
+                <p class="review-text">15/11/2024, 01:01:18</p>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 ElectroMart. All rights reserved.</p>
+        <select id="currency-select">
+            <option value="USD">دولار امريكي</option>
+            <option value="EGP">جنيه مصري</option>
+            <option value="SAR">ريال سعودي</option>
+            <option value="SYP">ليرة سورية</option>
+            <option value="YER">ريال يمني</option>
+            <option value="SDG">جنيه سوداني</option>
+            <option value="KWD">دينار كويتي</option>
+
+        </select>
+        <ul>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </footer>
+    <script>
+        const MEDIA_URL = "{{ MEDIA_URL }}";
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'JS/scripts.js' %}"></script>
+    <script src="{% static 'JS/product.js' %}"></script>
+    <script src="{% static 'JS/searchproducts.js' %}" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Status | ElectroMart</title>
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>
+                <a href="{% url 'index' %}">
+                    <img src="{{ MEDIA_URL }}images/logo.png" alt="ElectroMart Logo" class="logo">
+                </a>
+            </h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'cart' %}">Cart</a></li>
+                    <li><a href="{% url 'user_profile' %}">Profile</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Order Status</h2>
+            <div class="status-container">
+                <p><strong>Order ID:</strong> <span id="order-id">12345</span></p>
+                <p><strong>Product:</strong> <span id="product-name">Wireless Headphones</span></p>
+                <p><strong>Quantity:</strong> <span id="quantity">2</span></p>
+                <p><strong>Total Price:</strong> <span id="total-price">$100</span></p>
+                <p class="status"><strong>Status:</strong> <span id="order-status">Shipped</span></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ElectroMart. Your satisfaction is our priority!</p>
+    </footer>
+</body>
+
+</html>

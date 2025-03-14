@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History | ElectroMart</title>
+    <link rel="stylesheet" href="{% static 'CSS/history.css' %}">
+</head>
+<body>
+    {% include 'header.html' %}
+    <main>
+        <div class="container">
+            <h2>Your Order History</h2>
+            {% if orders %}
+            <table class="order-history">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                        <th>Status</th>
+                        <th>Order Date</th>
+                        <th>Last Update</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                    <tr>
+                        <td>{{ order.id }}</td>
+                        <td>{{ order.product.name }}</td>
+                        <td>{{ order.quantity }}</td>
+                        <td>${{ order.total_price }}</td>
+                        <td>{{ order.get_status_display }}</td>
+                        <td>{{ order.order_date|date:"M d, Y" }}</td>
+                        <td>{{ order.status_update_date|date:"M d, Y" }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p class="empty-history">You have not placed any orders yet.</p>
+            {% endif %}
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 ElectroMart. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

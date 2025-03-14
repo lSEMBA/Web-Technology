@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Detail | ElectroMart</title>
+    <link rel="stylesheet" href="{% static 'CSS/order_detail.css' %}">
+</head>
+<body>
+    {% include 'header.html' %}
+    <main>
+        <div class="container">
+            <h2>Order Details</h2>
+            <div class="order-details">
+                <p><strong>Order ID:</strong> {{ order.id }}</p>
+                <p><strong>Product:</strong> {{ order.product.name }}</p>
+                <p><strong>Quantity:</strong> {{ order.quantity }}</p>
+                <p><strong>Total Price:</strong> ${{ order.total_price }}</p>
+                <p><strong>Status:</strong> {{ order.get_status_display }}</p>
+                <p><strong>Order Date:</strong> {{ order.order_date|date:"M d, Y" }}</p>
+                <p><strong>Last Update:</strong> {{ order.status_update_date|date:"M d, Y" }}</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 ElectroMart. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

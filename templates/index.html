@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/favicon.ico" sizes="16x16 32x32 192x192 512x512" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ MEDIA_URL }}images/ico/apple-touch-icon.png">
+
+    <script src="{% static 'JS/ajax.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static 'CSS/brand.css' %}">
+
+
+    <title>ElectroMart</title>
+    <link rel="stylesheet" href="{% static 'CSS/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/All.css' %}">
+    <script src="https://kit.fontawesome.com/947ffa6964.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    {% include 'header.html' %}
+
+    <div>
+        <section class="brand-filter">
+            <!-- Brand Dropdown Section -->
+            <div class="brand-dropdown-container">
+                <select class="brand-dropdown" onchange="window.location.href='/index/brand/' + this.value;">
+                    <option value="" selected disabled>Shop by Brand</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="PlayStation">PlayStation</option>
+                    <option value="HP">HP</option>
+                    <option value="Huawei">Huawei</option>
+                    <option value="Midea">Midea</option>
+                    <option value="Panasonic">Panasonic</option>
+                    <option value="LG">LG</option>
+                    <option value="Intel">Intel</option>
+                    <option value="Xiaomi">Xiaomi</option>
+                    <option value="Dell">Dell</option>
+                    <option value="Lenovo">Lenovo</option>
+                    <option value="Sony">Sony</option>
+                    <option value="Canon">Canon</option>
+                    <option value="Haier">Haier</option>
+                    <option value="Asus">Asus</option>
+                    <option value="Razer">Razer</option>
+                    <option value="Logitech">Logitech</option>
+                    <option value="Bose">Bose</option>
+                    <option value="Seagate">Seagate</option>
+                    <option value="JBL">JBL</option>
+                </select>
+            </div>
+
+            <!-- Brand Links Section -->
+            <div class="brand-links">
+                <ul class="brand-list">
+                    <li><a href="/index/brand/Apple" class="apple">Apple</a></li>
+                    <li><a href="/index/brand/Samsung" class="samsung">Samsung</a></li>
+                    <li><a href="/index/brand/HP" class="hp">HP</a></li>
+                    <li><a href="/index/brand/Huawei" class="huawei">Huawei</a></li>
+                    <li><a href="/index/brand/Sony" class="Sony">Sony</a></li>
+                    <li><a href="/index/brand/Midea" class="midea">Midea</a></li>
+                    <li><a href="/index/brand/LG" class="lg">LG</a></li>
+                    <li><a href="/index/brand/Intel" class="intel">Intel</a></li>
+                    <li><a href="/index/brand/Xiaomi" class="xiaomi">Xiaomi</a></li>
+                    <li><a href="/index/brand/Dell" class="dell">Dell</a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+
+
+
+    <section class="hero">
+        <h2>Welcome to ElectroMart</h2>
+        <p>Your one-stop shop for all things electronics!</p>
+    </section>
+
+
+    <div id="product-container"></div>
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 ElectroMart. All rights reserved.</p>
+        <select id="currency-select">
+            <option value="USD">دولار امريكي</option>
+            <option value="EGP">جنيه مصري</option>
+            <option value="SAR">ريال سعودي</option>
+            <option value="SYP">ليرة سورية</option>
+            <option value="YER">ريال يمني</option>
+            <option value="SDG">جنيه سوداني</option>
+            <option value="KWD">دينار كويتي</option>
+
+        </select>
+
+        <ul>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </footer>
+    <script>
+        const MEDIA_URL = "{{ MEDIA_URL }}";
+    </script>
+    <script src="{% static 'JS/scripts.js' %}"></script>
+    <script src="{% static 'JS/product.js' %}"></script>
+    <script src="{% static 'JS/card.js' %}"></script>
+
+</body>
+
+</html>

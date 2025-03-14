@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/favicon-32x32.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="{{ MEDIA_URL }}images/ico/apple-touch-icon.png">
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/android-chrome-192x192.png" sizes="192x192" type="png">
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/android-chrome-512x512.png" sizes="512x512" type="png">
+
+    <script src="{% static 'JS/ajax.js' %}"></script>
+
+    <title>ElectroMart</title>
+    <link rel="stylesheet" href="{% static 'CSS/All.css' %}">
+
+    <link rel="stylesheet" href="{% static 'CSS/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/about_sty.css' %}">
+
+
+    <script src="https://kit.fontawesome.com/947ffa6964.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header -->
+    {% include 'header.html' %}
+
+    <section class="hero">
+        <h2>Welcome to ElectroMart</h2>
+        <p>Your one-stop shop for all things electronics!</p>
+    </section>
+
+    <div id="product-container"></div>
+    <section id="product-container">
+
+
+        <div class="about-sta ">
+            <h1>About US</h1>
+
+            <p>
+                Welcome to  ElectroMart - Your One-Stop Shop for Electronics
+                At  ElectroMart , we are dedicated to providing a seamless online shopping experience for all your electronic needs. Whether you're in the market for the latest smartphones, high-performance laptops, or cutting-edge wireless headphones, we offer a wide variety of top-quality products at competitive prices. Our platform connects trusted sellers with buyers looking for the best deals on the most popular electronic gadgets.
+                <br><br>
+
+            </p>
+            <h3>
+                Team Members:
+                <br><br>
+                    <div class="team">
+                        <div class="team-member">
+                            <span class="name">Eslam Mohammed</span>
+                            <span class="id">ID: 20220984</span>
+                        </div>
+                        <div class="team-member">
+                            <span class="name">Salah Mohammed</span>
+                            <span class="id">ID: 20220684</span>
+                        </div>
+                        <div class="team-member">
+                            <span class="name">Hamza Omar</span>
+                            <span class="id">ID: 20220729</span>
+                        </div>
+                        <div class="team-member">
+                            <span class="name">Aymen Abdullah</span>
+                            <span class="id">ID: 20220840</span>
+                        </div>
+                        <div class="team-member">
+                            <span class="name">Saleh Ibrahim</span>
+                            <span class="id">ID: 20210724</span>
+                        </div>
+                    </div>
+            </h3>
+
+
+        </div>
+
+
+
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 ElectroMart. All rights reserved.</p>
+        <ul>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </footer>
+
+    <script src="{% static 'JS/scripts.js' %}"></script>
+    <script src="{% static 'JS/product.js' %}"></script>
+
+</body>
+</html>

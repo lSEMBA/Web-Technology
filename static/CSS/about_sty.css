@@ -1,0 +1,46 @@
+.about-sta {
+    background: var(--product-bg-color);
+    border-radius: 8px;
+    width: 900px;
+    flex-direction: column; 
+    justify-content: space-between;
+    box-shadow: 0 4px 8px var(--product-shadow-color);
+    overflow: hidden;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    margin: 5px;
+    padding: 20px;
+}
+
+P {
+    line-height: 2;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    font-family: Arial, sans-serif;
+}
+.team-member {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.name {
+    font-weight: bold;
+    flex-basis: 20%;
+    text-align: left;
+}
+
+.id {
+    margin-right: 560px;
+    color: #555;
+    flex-basis: 20%;
+    text-align: right;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/favicon-32x32.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="{{ MEDIA_URL }}images/ico/apple-touch-icon.png">
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/android-chrome-192x192.png" sizes="192x192" type="png">
+    <link rel="icon" href="{{ MEDIA_URL }}images/ico/android-chrome-512x512.png" sizes="512x512" type="png">
+
+
+    <title>ElectroMart</title>
+    <link rel="stylesheet" href="{% static 'CSS/start.css' %}">
+
+</head>
+<body>
+
+    <h1>Choose a Project</h1>
+    <div class="projects">
+        <div class="project" id="ecommerce">E-Commerce Website</div>
+        <div class="project" id="realestate">Real Estate Listing Site</div>
+        <div class="project" id="recipe">Recipe Sharing Website</div>
+        <div class="project" id="blog">Blog Platform</div>
+    </div>
+
+    <script src="{% static 'JS/start.js' %}"></script>
+
+
+</body>
+</html>
