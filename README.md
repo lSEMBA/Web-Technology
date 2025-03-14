@@ -75,26 +75,31 @@ python manage.py createsuperuser
 ## **Project Structure**
 ```
 Web-Technology-Project/
-├── media/                # Images
-│   ├── avatars/          # avatars profile
-│   ├── images/           # images 
-│   └── products/         # products images
-├── myapp/                # Main Django application
-│   ├── admin.py          # Admin model definitions
-│   ├── apps.py           # Application settings
-│   ├── models.py         # Database models
-│   ├── urls.py           # Application URL routing
-│   └── views.py          # View logic
-├── Salah/                # Project settings
-│   ├── settings.py       # Django settings
-│   ├── urls.py           # Main URL routing
-│   ├── wsgi.py           # WSGI Configuration
-│   └── asgi.py           # ASGI Configuration
-├── static/               # CSS, JS
-├── templates/            # HTML files
-├── db.sqlite3            # SQLite database
-├── manage.py             # Django management script
-└── README.md             # This file
+├── media/                         # Images
+│   ├── avatars/                   # avatars profile
+│   ├── images/                    # images 
+│   └── products/                  # products images
+├── myapp/                         # Main Django application
+│   ├── admin.py                   # Admin model definitions
+│   ├── apps.py                    # Application settings
+│   ├── models.py                  # Database models
+│   ├── urls.py                    # Application URL routing
+│   └── views.py                   # View logic
+├── Salah/                         # Project settings
+│   ├── settings.py                # Django settings
+│   ├── urls.py                    # Main URL routing
+│   ├── wsgi.py                    # WSGI Configuration
+│   └── asgi.py                    # ASGI Configuration
+├── static/                        # CSS, JS
+├── templates/                     # HTML files
+├── db.sqlite3                     # SQLite database
+├── manage.py                      # Django management script
+├── docs/                          # Documentation and resources
+│   ├── Phase_1.pdf                # Phase 1 documentation
+│   ├── Phase_2.pdf                # Phase 2 documentation
+│   ├── Phase_3.pdf                # Phase 3 documentation
+│   └── Project1_Participants.pdf  # List of project participants
+└── README.md                      # This file
 ```
 
 ---
