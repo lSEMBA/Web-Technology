@@ -1,11 +1,23 @@
 
 # **Web Technology Project**
 
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Django Version](https://img.shields.io/badge/Django-5.1.4-blue)](https://www.djangoproject.com/)
 [![License](https://img.shields.io/badge/license-MIT-green)](#license)
+
+
+
+#### **Technologies Used**
+This project utilizes the following technologies:
+- **Frontend:**
+  - [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+  - [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+  - [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- **Backend:**
+  - [![Django Version](https://img.shields.io/badge/Django-5.1.4-blue)](https://www.djangoproject.com/)
+- **Database:**
+  - SQLite3
+
+
+
 
 ## **Overview**
 This project is a web application developed as part of the **Web Technology** course at the Faculty of Computers and Artificial Intelligence, Cairo University. It demonstrates the core concepts of web development using the Django framework. The application integrates user management, media handling, and dynamic content rendering, providing a solid foundation for building modern web applications.
