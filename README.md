@@ -178,6 +178,13 @@ If you'd like to contribute to this project, you can:
 
 ---
 
+## **Team Member**
+- GitHub-Leader: [Salah Mohammed](https://github.com/lSEMBA)
+- GitHub-Member: [Eslam Mohammed](https://github.com/Eslam1111)
+- GitHub-Member: [Hamza Omar](https://github.com/hmoozey)
+
+---
+
 **Note:** This project was developed as part of the **Web Technology** course at the Faculty of Computers and Artificial Intelligence, Cairo University. It serves as an educational demonstration of web development principles using Django.
 
 ---
